@@ -16,18 +16,10 @@ enum GameState {
     case paused
 }
 
-enum Difficulty: CaseIterable, Identifiable {
-    case easy, medium, hard, expert
+enum Difficulty: Int, CaseIterable, Identifiable {
+    case easy = 3, medium = 4, hard = 5, expert = 6
     
     var id: Int { rawValue }
-    var rawValue: Int {
-        switch self {
-        case .easy: return 3
-        case .medium: return 4
-        case .hard: return 5
-        case .expert: return 6
-        }
-    }
     
     var name: String {
         switch self {
@@ -138,7 +130,7 @@ class PuzzleGameModel: ObservableObject {
             let directions: [MoveDirection] = [.up, .down, .left, .right]
             let randomDirection = directions.randomElement()!
             
-            if canMove(blankRow, blankCol, direction: randomDirection, in: shuffled) {
+            if canMove(blankRow, col: blankCol, direction: randomDirection, in: shuffled) {
                 let newRow = blankRow + randomDirection.offset.row
                 let newCol = blankCol + randomDirection.offset.col
                 
@@ -327,6 +319,7 @@ class PuzzleGameModel: ObservableObject {
     }
     
     deinit {
-        stopTimer()
+        // Timer will be automatically invalidated when the object is deallocated
+        // No need to call stopTimer() from deinit as it's main actor isolated
     }
 }

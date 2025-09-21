@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct ContentView: View {
     @StateObject private var gameModel = PuzzleGameModel()
@@ -141,7 +140,7 @@ struct ContentView: View {
         }
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(Color(UIColor.systemBackground))
+                .fill(Color(red: 0.95, green: 0.95, blue: 0.97))
                 .shadow(color: .black.opacity(0.1), radius: 10, x: 0, y: 5)
         )
         .padding(.horizontal)
@@ -207,7 +206,7 @@ struct StatCard: View {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color(UIColor.systemBackground))
+        .background(Color(red: 0.95, green: 0.95, blue: 0.97))
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
     }

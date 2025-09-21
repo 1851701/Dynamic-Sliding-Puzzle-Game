@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct SettingsView: View {
     @ObservedObject var gameModel: PuzzleGameModel
@@ -100,7 +99,7 @@ struct SettingsView: View {
             }
         }
         .padding()
-        .background(Color(UIColor.systemBackground))
+        .background(Color(red: 0.95, green: 0.95, blue: 0.97))
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
     }
@@ -147,7 +146,7 @@ struct SettingsView: View {
             )
         }
         .padding()
-        .background(Color(UIColor.systemBackground))
+        .background(Color(red: 0.95, green: 0.95, blue: 0.97))
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
     }
@@ -205,13 +204,13 @@ struct SettingsView: View {
                 .cornerRadius(12)
             }
             
-            Button(action: dismiss) {
+            Button(action: { dismiss() }) {
                 Text("Cancel")
                     .font(.headline)
                     .foregroundColor(.blue)
                     .frame(maxWidth: .infinity)
                     .padding()
-                    .background(Color(UIColor.systemGray6))
+                    .background(Color(red: 0.95, green: 0.95, blue: 0.97))
                     .cornerRadius(12)
             }
         }
@@ -366,7 +365,7 @@ struct GameInfoView: View {
                         )
                     }
                     .padding()
-                    .background(Color(UIColor.systemBackground))
+                    .background(Color(red: 0.95, green: 0.95, blue: 0.97))
                     .cornerRadius(12)
                     .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
                     
@@ -388,7 +387,7 @@ struct GameInfoView: View {
                         }
                     }
                     .padding()
-                    .background(Color(UIColor.systemBackground))
+                    .background(Color(red: 0.95, green: 0.95, blue: 0.97))
                     .cornerRadius(12)
                     .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
                     
@@ -410,7 +409,7 @@ struct GameInfoView: View {
                         }
                     }
                     .padding()
-                    .background(Color(UIColor.systemBackground))
+                    .background(Color(red: 0.95, green: 0.95, blue: 0.97))
                     .cornerRadius(12)
                     .shadow(color: .black.opacity(0.05), radius: 5, x: 0, y: 2)
                 }
